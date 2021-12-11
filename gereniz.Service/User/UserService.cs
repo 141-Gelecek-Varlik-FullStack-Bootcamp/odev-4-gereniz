@@ -26,6 +26,7 @@ namespace gereniz.Service.User
             using (var srv = new DomainContext())
             {
                 model.IdateTime = DateTime.Now;
+                model.IsActive = true;
                 srv.Users.Add(model);
                 srv.SaveChanges();
                 result.IsSuccess = true;

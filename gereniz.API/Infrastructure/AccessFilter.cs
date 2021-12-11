@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Routing;
 
 namespace gereniz.API.Infrastructure
 {
-    public class LoginFilter : Attribute ,IActionFilter
+    public class AccessFilter : Attribute ,IActionFilter
     {
         private string _user;
 
-        public LoginFilter(String user)
+        public AccessFilter(String user)
         {
             _user = user;
         }

@@ -7,7 +7,7 @@ namespace gereniz.Web.Controllers
 {
     public class ProductController : Controller
     {
-        [LoginFilter("Admin")]
+        [AccessFilter("Admin")]
         public IActionResult Index()
         {
             return View();
