@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.API", "gereniz.API\gereniz.API.csproj", "{B7A69C2B-6C02-4055-A747-0E95A563B42A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Database", "gereniz.Database\gereniz.Database.csproj", "{100EAC86-BA09-4CA1-A9EA-8ABEA0DB7F02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Model", "gereniz.Model\gereniz.Model.csproj", "{055DB518-0E7B-4485-A76B-11B0FC2135AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Service", "gereniz.Service\gereniz.Service.csproj", "{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Web", "gereniz.Web\gereniz.Web.csproj", "{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Core", "gereniz.Core\gereniz.Core.csproj", "{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7A69C2B-6C02-4055-A747-0E95A563B42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7A69C2B-6C02-4055-A747-0E95A563B42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7A69C2B-6C02-4055-A747-0E95A563B42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7A69C2B-6C02-4055-A747-0E95A563B42A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{100EAC86-BA09-4CA1-A9EA-8ABEA0DB7F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100EAC86-BA09-4CA1-A9EA-8ABEA0DB7F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100EAC86-BA09-4CA1-A9EA-8ABEA0DB7F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100EAC86-BA09-4CA1-A9EA-8ABEA0DB7F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055DB518-0E7B-4485-A76B-11B0FC2135AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055DB518-0E7B-4485-A76B-11B0FC2135AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055DB518-0E7B-4485-A76B-11B0FC2135AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055DB518-0E7B-4485-A76B-11B0FC2135AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC00490E-0CE6-40FE-85FB-8A993F94A4FE}
+	EndGlobalSection
+EndGlobal

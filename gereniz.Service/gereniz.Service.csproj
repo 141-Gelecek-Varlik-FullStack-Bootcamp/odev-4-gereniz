@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="User\" />
+    <None Remove="AutoMapper" />
+    <None Remove="Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="User\" />
+    <Folder Include="Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gereniz.Database\gereniz.Database.csproj" />
+    <ProjectReference Include="..\gereniz.Model\gereniz.Model.csproj" />
+    <ProjectReference Include="..\gereniz.Core\gereniz.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+</Project>
