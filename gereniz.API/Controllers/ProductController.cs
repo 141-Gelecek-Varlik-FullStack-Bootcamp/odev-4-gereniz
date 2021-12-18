@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using gereniz.API.Infrastructure;
 using gereniz.Database.Entities;
 using gereniz.Model;
 using gereniz.Model.Product;
@@ -25,13 +26,14 @@ namespace gereniz.API.Controllers
         }
 
 
-        [HttpGet]
-        public List<ProductViewModel> Get()
+        [HttpGet("get")]
+        public General<ProductViewModel> Get()
         {
             return _productService.Get();
         }
 
         [HttpPost]
+        [ServiceFilter(typeof(LoginFilter))]
         public General<ProductViewModel> Insert([FromBody] ProductViewModel productViewModel)
         {
             return _productService.Insert(productViewModel);
@@ -47,6 +49,24 @@ namespace gereniz.API.Controllers
         public bool Remove(int id)
         {
             return _productService.Remove(id);
+        }
+
+        [HttpGet("sort")]
+        public General<ProductViewModel> Sort([FromQuery] string sortType)
+        {
+            return _productService.Sorting(sortType) ;
+        }
+
+        [HttpGet("filter")]
+        public General<ProductViewModel> Filter([FromQuery] string filterType, [FromQuery] string filter)
+        {
+            return _productService.Filtering(filterType,filter);
+        }
+
+        [HttpGet("paging")]
+        public General<ProductViewModel> Page([FromQuery] int pageCount, [FromQuery] int productCount)
+        {
+            return _productService.Paging(pageCount, productCount);
         }
     }
 }

@@ -19,12 +19,54 @@ namespace gereniz.Service.Product
             _mapper = mapper;
         }
 
-        //Ürünleri getirme
-        public List<ProductViewModel> Get()
+
+        //Ürün Filtreleme
+        //api/Product/Filter?filterType=Name&filter=a
+        public General<ProductViewModel> Filtering(string filterType,string filter)
         {
-            //Extensions kullanarak Product ları ProductViewModele çevirdik.
-            List<ProductViewModel> list = Extensions.ChangeView(_mapper);
-            return list;
+            var result = new General<ProductViewModel>() { IsSuccess = false };
+            using (var srv = new DomainContext())
+            {
+                var products = srv.Products.ToList();
+                if (filterType == "Name")
+                {
+                    products = (srv.Products.Where(p => p.Name.Contains(filter))).ToList();
+
+                }
+                else if (filterType == "CategoryId")
+                {
+                    products = (srv.Products.Where(p => p.CategoryId == Convert.ToInt32(filter))).ToList();
+
+                }
+                else if (filterType == "Price")
+                {
+                    products = (srv.Products.Where(p => p.Price == Convert.ToInt32(filter))).ToList();
+
+                }
+                else if (filterType == "Stock")
+                {
+                    products = (srv.Products.Where(p => p.Stock == Convert.ToDouble(filter))).ToList();
+
+                }
+               var model = _mapper.Map<List<ProductViewModel>>(products);
+                result.IsSuccess = true;
+                result.List = model;
+                return result;
+            }
+        }
+
+        //Ürünleri getirme
+        public General<ProductViewModel> Get()
+        {
+            var result = new General<ProductViewModel>() { IsSuccess = false };
+            using (var srv = new DomainContext())
+            {
+                var products = srv.Products.ToList();
+                var model = _mapper.Map<List<ProductViewModel>>(products);
+                result.IsSuccess = true;
+                result.List = model;
+                return result;
+            }
         }
 
         //Ürün ekleme
@@ -47,6 +89,30 @@ namespace gereniz.Service.Product
             return result;
         }
 
+        //Ürün Sayfalama
+        public General<ProductViewModel> Paging(int pageCount, int productCount) 
+        {
+
+            var result = new General<ProductViewModel>() { IsSuccess = false };
+            int pageSumCount;
+            int skipSize = (pageCount * productCount) - productCount;
+            using (var srv = new DomainContext())
+            {
+                var productsCount = srv.Products.Count(); 
+                pageSumCount = productsCount / productCount; 
+                if (productsCount % productCount != 0)
+                {
+                    pageSumCount++;  
+                }
+
+                var products = srv.Products.Skip(skipSize).Take(productCount);
+                var model = _mapper.Map<List<ProductViewModel>>(products);
+                result.IsSuccess = true;
+                result.List = model;
+                return result;
+            }
+        }
+
         //Ürün silme
         public bool Remove(int id)
         {
@@ -64,6 +130,41 @@ namespace gereniz.Service.Product
                 result = true;
             }
             return result;
+        }
+        //Ürün Sıralama
+        ///api/Product/Sort?sortType=Name
+        public General<ProductViewModel> Sorting(string sortType)
+        {
+            var result = new General<ProductViewModel>() { IsSuccess = false};
+      
+            using (var srv = new DomainContext())
+            {
+                var products = srv.Products.Where(p => p.Id >0).ToList();
+                if (sortType == "Name")
+                {
+                    products = (srv.Products.OrderBy(p => p.Name)).ToList();
+
+                }
+                else if (sortType == "CategoryId")
+                {
+                     products = (srv.Products.OrderBy(p => p.CategoryId)).ToList();
+
+                }
+                else if (sortType == "Price")
+                {
+                     products = (srv.Products.OrderBy(p => p.Price)).ToList();
+
+                }
+                else if (sortType == "Stock")
+                {
+                     products = (srv.Products.OrderBy(p => p.Stock)).ToList();
+
+                }
+                var model = _mapper.Map<List<ProductViewModel>>(products);
+                result.IsSuccess = true;
+                result.List = model;
+                return result;
+            }
         }
 
         //Ürün güncelleme

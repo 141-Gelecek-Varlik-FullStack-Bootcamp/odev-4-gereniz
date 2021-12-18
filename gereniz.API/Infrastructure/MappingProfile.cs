@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using gereniz.Database.Entities;
 using gereniz.Model.Product;
@@ -17,7 +18,10 @@ namespace gereniz.API.Infrastructure
             CreateMap<Users, LoginViewModel>();
 
             CreateMap<ProductViewModel, Products>();
+           
             CreateMap<Products, ProductViewModel>();
+
+            CreateMap< List < Products >,ProductViewModel >();
         }
     }
 }

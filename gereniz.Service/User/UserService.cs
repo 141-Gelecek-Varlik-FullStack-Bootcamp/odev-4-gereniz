@@ -36,12 +36,17 @@ namespace gereniz.Service.User
         }
 
         //Kullanıcı Girişi
-        public bool Login(LoginViewModel loginViewModel)
+        public General<UserViewModel> Login(LoginViewModel loginViewModel)
         {
-            bool result = false;
+            General<UserViewModel> result = new();
             using (var srv = new DomainContext())
             {
-                result = srv.Users.Any(u => u.IsActive && !u.IsDeleted && u.Username == loginViewModel.Username && u.Password == loginViewModel.Password);
+                var _data = srv.Users.FirstOrDefault(u => !u.IsDeleted && u.IsActive && u.Username == loginViewModel.Username && u.Password == loginViewModel.Password);
+                if (_data is not null)
+                {
+                    result.IsSuccess = true;
+                    result.Entity = _mapper.Map<UserViewModel>(_data);
+                }
             }
             return result;
         }

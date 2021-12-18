@@ -35,6 +35,8 @@ namespace gereniz.API
 
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddScoped<LoginFilter>();
+            services.AddMemoryCache();
             services.AddControllers();
         }
 

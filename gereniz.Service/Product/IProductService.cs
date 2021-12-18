@@ -8,9 +8,13 @@ namespace gereniz.Service.Product
 {
     public interface IProductService
     {
-        public List<ProductViewModel> Get();
+        public General<ProductViewModel> Get();
         public General<ProductViewModel> Insert(ProductViewModel productViewModel);
         public General<ProductViewModel> Update(int id,ProductViewModel productViewModel);
         public bool Remove(int id);
+        public General<ProductViewModel> Sorting(string sortType);
+        public General<ProductViewModel> Filtering(string filterType,string filter);
+        public General<ProductViewModel> Paging(int pageCount, int productCount);
+
     }
 }

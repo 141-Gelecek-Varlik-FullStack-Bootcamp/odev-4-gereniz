@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Model", "gereniz.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Service", "gereniz.Service\gereniz.Service.csproj", "{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Web", "gereniz.Web\gereniz.Web.csproj", "{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gereniz.Core", "gereniz.Core\gereniz.Core.csproj", "{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}"
 EndProject
 Global
@@ -37,10 +35,6 @@ Global
 		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9345C5-0C1A-41AA-ACF0-8AF1D5E3122C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22FD9666-70BA-400F-ADC7-B4A8073CD2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09FB7AEF-C90E-48E7-B9D4-B2AC8576495D}.Release|Any CPU.ActiveCfg = Release|Any CPU

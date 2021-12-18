@@ -2,34 +2,34 @@
 using System.Linq;
 using gereniz.Database.Entities;
 using gereniz.Database.Entities.DomainContext;
+using gereniz.Model.User;
 using gereniz.Service.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace gereniz.API.Infrastructure
 {
-    public class AccessFilter : Attribute ,IActionFilter
+    public class LoginFilter : Attribute ,IActionFilter
     {
-        private string _user;
+        private readonly IMemoryCache _memoryCache;
 
-        public AccessFilter(String user)
+        public LoginFilter(IMemoryCache memoryCache)
         {
-            _user = user;
+            _memoryCache = memoryCache;
         }
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            throw new NotImplementedException();
+
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            //kullanıcı Admin ise Product bilgilerine ait Product/Index sayfasına yönlendir.
-            if (_user == "Admin")
+            if (!_memoryCache.TryGetValue(CacheKeys.Login, out UserViewModel response))
             {
-                context.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Product", Action = "Add" }));
-                return;
+                context.Result = new BadRequestObjectResult("Hata");
             }
             return;
         }
